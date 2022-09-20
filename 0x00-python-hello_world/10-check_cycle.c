@@ -5,7 +5,7 @@
 /**
  * add_nodepointer - adds a new node at the beginning of a listint_t list
  * @head: pointer to a pointer of the start of the list
- * @n: integer to be included in node
+ * @p: integer to be included in node
  * Return: address of the new element or NULL if it fails
  */
 listpointer_t *add_nodepointer(listpointer_t **head, listint_t *p)
@@ -30,7 +30,7 @@ listpointer_t *add_nodepointer(listpointer_t **head, listint_t *p)
  */
 int check_cycle(listint_t *list)
 {
-	listint_t *list_cpy; 
+	listint_t *list_cpy;
 	listpointer_t *prev_list, *temp_node;
 
 	list_cpy = list;
