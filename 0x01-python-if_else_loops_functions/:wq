@@ -1,0 +1,12 @@
+#!/usr/bin/python3
+
+def uppercase(str):
+    for c in str:
+        if(c == str[-1]):
+            _end = "\n"
+        else:
+            _end = ''
+        if(ord(c) >= 97 and ord(c) <= 122):
+            print(chr(ord(c) - 32), end=_end)
+        else:
+            print(c, end=_end)
