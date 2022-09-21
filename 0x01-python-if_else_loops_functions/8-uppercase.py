@@ -8,6 +8,6 @@ def uppercase(str):
         else:
             _end = ''
         if(ord(str[i]) >= 97 and ord(str[i]) <= 122):
-            print(chr(ord(str[i]) - 32), end=_end)
+            print('{}'.format(chr(ord(str[i]) - 32)), end=_end)
         else:
-            print(str[i], end=_end)
+            print'{}'.format((str[i]), end=_end)
