@@ -43,7 +43,7 @@ int is_palindrome(listint_t **head)
 	int j;
 	listint_t *temp_head, *temp_node;
 
-	if (*head == NULL || *head->next == NULL)
+	if (*head == NULL || (*head)->next == NULL)
 		return (1);
 	
 	temp_head = temp_node = *head;
