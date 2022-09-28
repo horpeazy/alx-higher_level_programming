@@ -40,5 +40,3 @@ def roman_to_int(roman_string):
             result += 1000
 
     return result
-
-
