@@ -4,11 +4,9 @@ def safe_print_list(my_list=[], x=0):
     try:
         i = 0
         while i < x:
-            print(my_list[i], end="")
+            print(my_list[i], end="" if i != x -1 else '\n')
             i += 1
-        print("")
     except Exception as e:
         print("")
-        return (i-1)
-    else:
+    finally:
         return (i)
