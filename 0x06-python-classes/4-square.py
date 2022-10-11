@@ -5,9 +5,6 @@
 """
 
 
-from pyautogui import size
-
-
 class Square:
     """
         This a class that represents a square
