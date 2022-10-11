@@ -63,7 +63,7 @@ class Square:
 
     def __str__(self):
         if self.size == 0:
-            return "\n"
+            return str()
         _str = ""
         for _ in range(self.position[1]):
             _str += "\n"
@@ -74,4 +74,4 @@ class Square:
                 _str += "#"
             _str += "\n"
 
-        return _str
+        return str(_str)
