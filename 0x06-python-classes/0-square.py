@@ -1,3 +1,4 @@
+#!/usr/bin/python3
 """
     This modules defines a python class Square
     that contains no attribute
