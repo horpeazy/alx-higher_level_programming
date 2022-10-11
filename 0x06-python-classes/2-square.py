@@ -5,9 +5,6 @@
 """
 
 
-from typing import Type
-
-
 class Square:
     """
         This a class that represents a square
