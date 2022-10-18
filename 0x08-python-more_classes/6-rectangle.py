@@ -71,7 +71,7 @@ class Rectangle:
 
     def __del__(self):
         """Executes when an instance is deleted"""
-        
+
         if Rectangle.number_of_instances > 0:
             Rectangle.number_of_instances -= 1
 
