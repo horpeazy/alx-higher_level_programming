@@ -12,7 +12,7 @@ class Rectangle:
         """This is function is called when a class is created"""
         self.width = width
         self.height = height
-        number_of_instances += 1
+        Rectangle.number_of_instances += 1
 
     @property
     def width(self):
@@ -72,7 +72,7 @@ class Rectangle:
     def __del__(self):
         """Executes when an instance is deleted"""
         
-        if number_of_instances > 0:
-            number_of_instances -= 1
+        if Rectangle.number_of_instances > 0:
+            Rectangle.number_of_instances -= 1
 
         print("Bye rectangle...")
