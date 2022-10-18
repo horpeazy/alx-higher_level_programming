@@ -2,6 +2,7 @@
 
 """This modules supplies a basic rectangle class"""
 
+
 class Rectangle:
     """This ia basic representation of the rectangle class"""
 
