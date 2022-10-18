@@ -3,8 +3,10 @@
 """This modules supplies a basic rectangle class"""
 
 class Rectangle:
+    """This ia basic representation of the rectangle class"""
+
     def __init__(self, width=0, height=0):
-        """This is basic rectangle class"""
+        """This is function is called when a class is created"""
         self.width = width
         self.height = height
 
