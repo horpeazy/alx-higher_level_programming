@@ -37,5 +37,15 @@ class TestMaxInteger(unittest.TestCase):
         result = max_integer(l)
         self.assertEqual(result, 4.5)
 
+    def test_negative(self):
+        l = [-2, -6, -1]
+        result = max_integer(l)
+        self.assertEqual(result, -1)
+
+    def test_unique(self):
+        l = [45]
+        result = max_integer(l)
+        self.assertEqual(result, 45)
+
 if __name__ == "__main__":
     unittest.main()
