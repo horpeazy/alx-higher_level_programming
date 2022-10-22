@@ -5,6 +5,7 @@
     that prints the name to the stdout
 """
 
+
 def say_my_name(first_name, last_name=""):
     """
         prints the first and last name from the arguments

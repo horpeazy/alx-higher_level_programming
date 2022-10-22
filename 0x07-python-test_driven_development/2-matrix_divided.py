@@ -4,17 +4,18 @@
     matrix, divides it by div and returns the result
 """
 
+
 def matrix_divided(matrix, div):
     """
         The functions takes a matrix and an integer as input and returns a
         new matrix that is a result of dividing the elements of the input
-        matrix by the integer. It raises errors when the matrix contains 
+        matrix by the integer. It raises errors when the matrix contains
         worng value types or is of an inappropiate length, it also raises
         an error when the div supplied is not an integer or is equal to zero
 
         Parameters:
         matrix (list):  a list of lists
-        div (int): inetger to divide matrix by 
+        div (int): inetger to divide matrix by
 
         Returns:
         list: a new matrix
