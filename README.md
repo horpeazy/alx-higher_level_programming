@@ -1,4 +1,4 @@
-# Holberton School Higher-level Programming Track
+# ALX Higher-level Programming Track
 
 ## Description
 At ALX SE Programme , we learn by doing. We have projects everyday that we have to push on GitHub in order for an automatic review to be done.
