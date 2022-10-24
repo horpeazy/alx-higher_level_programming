@@ -17,4 +17,8 @@ Now test it:
     >>> bg.integer_validator("name", "John")
     Traceback (most recent call last):
     ...
-    TypeError: name must be am integer
+    TypeError: name must be an integer
+    >>> bg.integer_validator("Hope", 0)
+    Traceback (most recent call last):
+    ...
+    ValueError: Hope must be greater than 0
