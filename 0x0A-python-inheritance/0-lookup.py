@@ -3,7 +3,7 @@
 """
     This module supllies a function lookup that
     returns a list of the attributes and methods
-    present in an object passed to iy
+    present in an object passed to it
 """
 
 
