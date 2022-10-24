@@ -4,6 +4,7 @@
     This module supplies a class MyInt
 """
 
+
 class MyInt(int):
     """Custome int class"""
 
