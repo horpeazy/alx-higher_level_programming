@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 
 """
-    This module supplies a class BaseGeometry
+    This module supplies a class Rectangle
 """
 BaseGeometry = __import__("7-base_geometry").BaseGeometry
 
