@@ -39,8 +39,4 @@ class Rectangle(BaseGeometry):
 class Square(Rectangle):
     """A Square class"""
     def __init__(self, size) -> None:
-        self.__size = size
-        self.integer_validator(self.__size)
-
-    def area(self):
-        return self.__size ** 2
+        super().__init__(size, size)
