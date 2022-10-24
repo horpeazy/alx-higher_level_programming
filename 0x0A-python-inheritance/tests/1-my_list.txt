@@ -25,6 +25,3 @@ Now test it:
     [5, 3, 4, 1, 2]
     >>> my_list.append(None)
     >>> my_list.print_sorted()
-    Traceback (most recent call last):
-    ...
-    TypeError: '<' not supported between instances of 'NoneType' and 'int'

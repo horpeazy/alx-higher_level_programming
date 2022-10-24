@@ -16,4 +16,6 @@ class MyList(list):
 
     def print_sorted(self):
         """prints the elements in reversed sorted order"""
+        if None in self:
+            return
         print(sorted(self))
