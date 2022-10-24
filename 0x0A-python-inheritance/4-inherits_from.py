@@ -20,6 +20,4 @@ def inherits_from(obj, a_class):
         Return:
         boolean: True or False
     """
-    if not obj:
-        return False
     return isinstance(obj, a_class)
