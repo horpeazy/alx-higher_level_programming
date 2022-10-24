@@ -7,7 +7,7 @@
 class MyInt(int):
 
     def __eq__(self, __x: object) -> bool:
-        return self != __x
+        return not super().__eq__(__x)
 
     def __ne__(self, __x: object) -> bool:
-        return not self.__eq__(__x)
+        return not super().__ne__(__x)
