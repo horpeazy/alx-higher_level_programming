@@ -40,3 +40,7 @@ class Square(Rectangle):
     """A Square class"""
     def __init__(self, size) -> None:
         super().__init__(size, size)
+        self.__size = size
+
+    def area(self):
+        return self.__size ** 2
