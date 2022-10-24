@@ -20,4 +20,14 @@ def inherits_from(obj, a_class):
         Return:
         boolean: True or False
     """
-    return issubclass(obj.__name__, a_class)
+    return issubclass(obj.__class__.__name__, a_class)
+
+class A(object):
+    pass
+
+class B(A):
+    pass
+
+b = B()
+
+print(inherits_from(b, A))
