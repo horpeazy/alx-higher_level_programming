@@ -7,6 +7,7 @@ new_list = []
 for i in range(1, len(sys.argv)):
     new_list.append(sys.argv[i])
 
+
 try:
     old_list = load_from_json_file("add_item.json")
     old_list.extend(new_list)
