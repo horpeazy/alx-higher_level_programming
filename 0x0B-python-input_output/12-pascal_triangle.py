@@ -10,8 +10,6 @@ def pascal_triangle(n):
         return []
     if n == 1:
         return [[1]]
-    if n == 2:
-        return [[1], [1, 1]]
 
     prev_res = pascal_triangle(n-1)
     prev_arr = prev_res[-1]
