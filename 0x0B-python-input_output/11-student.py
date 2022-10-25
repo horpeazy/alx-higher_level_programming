@@ -24,3 +24,8 @@ class Student:
                 if att in self.__dict__:
                     my_dict[att] = self.__dict__.get(att)
             return my_dict
+
+    def reload_from_json(self, json):
+        """realods from json"""
+        for key, value in json.items():
+            self.key = value
