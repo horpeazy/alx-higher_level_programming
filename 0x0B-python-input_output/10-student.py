@@ -15,11 +15,13 @@ class Student:
 
     def to_json(self, attrs=None):
         """retrieves a dict representation of the class"""
-        my_dict = self.__dict__
+        my_dict = dict({})
         if not attrs:
-            return my_dict
+            return self.__dict__
         
         if type(attrs) == list:
             for att in attrs:
-                my_dict.pop(att)
+                if att in self.__dict__:
+                    my_dict[att] = self.__dict__.get(att)
             return my_dict
+
