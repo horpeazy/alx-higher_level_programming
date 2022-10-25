@@ -1,11 +1,12 @@
 #!/usr/bin/python3
-sys = __import__("sys")
+import sys
 save_to_json_file = __import__("5-save_to_json_file").save_to_json_file
 load_from_json_file = __import__("6-load_from_json_file").load_from_json_file
 
 new_list = []
-for i in range(1, len(sys.argv)):
-    new_list.append(sys.argv[i])
+if len(sys.argv) > 1:
+    for i in range(1, len(sys.argv)):
+        new_list.append(sys.argv[i])
 
 try:
     old_list = load_from_json_file("add_item.json")
