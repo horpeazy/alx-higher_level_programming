@@ -21,6 +21,8 @@ class Student:
 
         if type(attrs) == list:
             for att in attrs:
+                if type(att) != str:
+                    return
                 if att in self.__dict__:
                     my_dict[att] = self.__dict__.get(att)
             return my_dict
