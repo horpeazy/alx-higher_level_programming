@@ -18,10 +18,9 @@ class Student:
         my_dict = dict({})
         if not attrs:
             return self.__dict__
-        
+
         if type(attrs) == list:
             for att in attrs:
                 if att in self.__dict__:
                     my_dict[att] = self.__dict__.get(att)
             return my_dict
-
