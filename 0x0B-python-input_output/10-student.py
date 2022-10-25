@@ -22,4 +22,4 @@ class Student:
                 if att in self.__dict__:
                     my_dict[att] = self.__dict__.get(att)
             return my_dict
-        return self.__dict__
+        return self.__dict__.copy()
