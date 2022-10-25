@@ -5,6 +5,7 @@
 
 
 def pascal_triangle(n):
+    """This function builds a pascal triangle"""
     if n == 0:
         return []
     if n == 1:
