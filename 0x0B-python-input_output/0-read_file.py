@@ -4,8 +4,8 @@
 """
 
 
-def read_file(filename="", encode="utf8"):
+def read_file(filename=""):
     """Reads a file and prints it to stdout"""
-    with open(filename) as f:
+    with open(filename, 'r', encode="utf8") as f:
         file_content = f.read()
         print(file_content)
