@@ -41,9 +41,6 @@ class Base:
         for obj in list_objs:
             list_dict.append(obj.to_dictionary())
         with open(filename, 'w') as f:
-            if not list_objs:
-                f.write()
-            else:
                 f.write(cls.to_json_string(list_dict))
 
     @classmethod
