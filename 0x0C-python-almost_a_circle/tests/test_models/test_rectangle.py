@@ -1,6 +1,5 @@
 #!/usr/bin/python3
 """ This module contains test for Rectangle class """
-
 import unittest
 from models.rectangle import Rectangle
 from models.base import Base

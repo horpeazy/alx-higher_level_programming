@@ -3,8 +3,6 @@
 This module contains a class Rectangle
 that inherits from the Base Class
 """
-from turtle import width
-from matplotlib import widgets
 from .base import Base
 
 
