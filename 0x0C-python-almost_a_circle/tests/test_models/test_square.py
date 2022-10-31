@@ -1,13 +1,15 @@
 #!/usr/bin/python3
 """ This module contains test for Rectangle class """
 import unittest
-
-from pyautogui import size
+from models.base import Base
 from models.square import Square
 
 
 class TestRectangleClass(unittest.TestCase):
     """ test case for rectangle class """
+
+    def setUp(self) -> None:
+        Base._Base__nb_objects = 0
 
     def test_dimensions(self):
         """ test that it assings the dimensions """
@@ -31,7 +33,7 @@ class TestRectangleClass(unittest.TestCase):
         with self.assertRaises(TypeError):
             Square("string")
             Square(5, "string")
-            Square(5, 6,"string")
+            Square(5, 6, "string")
 
     def test_value_error(self):
         """ test that it raises value error """
@@ -103,7 +105,7 @@ class TestRectangleClass(unittest.TestCase):
         self.assertEqual(str(square), "[Square] (31) 10/10 - 6")
         square.update(23, id=91)
         self.assertEqual(str(square), "[Square] (23) 10/10 - 6")
-        square.update(76, 4, 5 ,x=1, size=2, y=3)
+        square.update(76, 4, 5, x=1, size=2, y=3)
         self.assertEqual(str(square), "[Square] (76) 5/10 - 4")
 
     def test_to_dictionary(self):
@@ -113,7 +115,35 @@ class TestRectangleClass(unittest.TestCase):
         square2 = Square(9)
         square_dict = square.to_dictionary()
         square.update(**square_dict)
-        self.assertEqual(square_dict, 
-            {'id': 23, 'x': 1, 'size': 10, 'y': 9})
+        self.assertEqual(square_dict,
+                         {'id': 23, 'x': 1, 'size': 10, 'y': 9})
         self.assertIsInstance(square_dict, dict)
         self.assertFalse(square == square2)
+
+    def test_load_from_file_csv_square(self):
+        """ test the method load_from_file """
+
+        s1 = Square(5)
+        s2 = Square(7, 9, 1)
+        list_squares_input = [s1, s2]
+        Square.save_to_file_csv(list_squares_input)
+        list_squares_output = Square.load_from_file_csv()
+        self.assertIsInstance(list_squares_output, list)
+        self.assertEqual(str(list_squares_output[0]),
+                         "[Square] (1) 0/0 - 5")
+        self.assertEqual(str(list_squares_output[1]),
+                         "[Square] (2) 9/1 - 7")
+
+    def test_load_from_file_square(self):
+        """ test the method load_from_file """
+
+        s1 = Square(5)
+        s2 = Square(7, 9, 1)
+        list_squares_input = [s1, s2]
+        Square.save_to_file(list_squares_input)
+        list_squares_output = Square.load_from_file()
+        self.assertIsInstance(list_squares_output, list)
+        self.assertEqual(str(list_squares_output[0]),
+                         "[Square] (1) 0/0 - 5")
+        self.assertEqual(str(list_squares_output[1]),
+                         "[Square] (2) 9/1 - 7")

@@ -82,7 +82,7 @@ class Rectangle(Base):
         if y < 0:
             raise ValueError("y must be >= 0")
         self.__y = y
-    
+
     def area(self):
         """ returns the area of the rectangle """
 
@@ -144,4 +144,4 @@ class Rectangle(Base):
         """ string representation of the class """
 
         return "[Rectangle] ({}) {}/{} - {}/{}".\
-                format(self.id, self.x, self.y, self.width, self.height)
+            format(self.id, self.x, self.y, self.width, self.height)

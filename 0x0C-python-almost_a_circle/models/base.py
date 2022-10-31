@@ -1,8 +1,9 @@
 #!/usr/bin/python3
 
 """This module contain a base class"""
-from fileinput import filename
 import json
+import csv
+
 
 class Base:
     """ A base class """
@@ -35,11 +36,11 @@ class Base:
     @classmethod
     def save_to_file(cls, list_objs):
         """ write the JSON string representation of list_objs to a file """
-        name = cls.__name__ + ".json"
+        filename = cls.__name__ + ".json"
         list_dict = []
         for obj in list_objs:
             list_dict.append(obj.to_dictionary())
-        with open(name, 'w') as f:
+        with open(filename, 'w') as f:
             if not list_objs:
                 f.write()
             else:
@@ -68,3 +69,48 @@ class Base:
             return []
 
         return obj_list
+
+    @classmethod
+    def save_to_file_csv(cls, list_objs):
+        """ write the CSV string representation of list_objs to a file """
+        filename = "{}.csv".format(cls.__name__)
+        list_csv = []
+        for obj in list_objs:
+            if cls.__name__ == "Rectangle":
+                obj_list = [obj.id, obj.width, obj.height, obj.x, obj.y]
+            elif cls.__name__ == "Square":
+                obj_list = [obj.id, obj.size, obj.x, obj.y]
+            list_csv.append(obj_list)
+
+        with open(filename, "w", newline="") as f:
+            csvwriter = csv.writer(f)
+            for line in list_csv:
+                csvwriter.writerow(line)
+
+    @classmethod
+    def load_from_file_csv(cls):
+        """  returns a list of instances fro CSV file """
+        filename = "{}.csv".format(cls.__name__)
+
+        try:
+            with open(filename, "r") as f:
+                list_csv = csv.reader(f)
+                args_list = []
+                obj_list = []
+                for line in list_csv:
+                    if cls.__name__ == "Rectangle":
+                        obj_dict = {"id": int(line[0]), "width": int(line[1]),
+                                    "height": int(line[2]), "x": int(line[3]),
+                                    "y": int(line[4])}
+                    elif cls.__name__ == "Square":
+                        obj_dict = {"id": int(line[0]), "size": int(line[1]),
+                                    "x": int(line[2]), "y": int(line[3])}
+                    args_list.append(obj_dict)
+
+                for args in args_list:
+                    new_obj = cls.create(**args)
+                    obj_list.append(new_obj)
+
+                return obj_list
+        except Exception:
+            return []

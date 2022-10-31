@@ -3,10 +3,14 @@
 
 import unittest
 from models.rectangle import Rectangle
+from models.base import Base
 
 
 class TestRectangleClass(unittest.TestCase):
     """ test case for rectangle class """
+
+    def setUp(self) -> None:
+        Base._Base__nb_objects = 0
 
     def test_dimensions(self):
         """ test that it assings the dimensions """
@@ -95,9 +99,9 @@ class TestRectangleClass(unittest.TestCase):
         self.assertEqual(str(rectangle), "[Rectangle] (31) 10/10 - 6/10")
         rectangle.update(23, id=91)
         self.assertEqual(str(rectangle), "[Rectangle] (23) 10/10 - 6/10")
-        rectangle.update(76, 4, 5 ,x=1, width=2, y=3)
+        rectangle.update(76, 4, 5, x=1, width=2, y=3)
         self.assertEqual(str(rectangle), "[Rectangle] (76) 10/10 - 4/5")
-    
+
     def test_to_dictionary(self):
         """ test if the to_dictionary method works """
 
@@ -105,7 +109,35 @@ class TestRectangleClass(unittest.TestCase):
         rectangle2 = Rectangle(1, 1, 4, 6, 20)
         rectangle_dict = rectangle.to_dictionary()
         rectangle2.update(**rectangle_dict)
-        self.assertEqual(rectangle_dict, 
-            {'x': 1, 'y': 9, 'id': 50, 'height': 2, 'width': 10})
+        self.assertEqual(rectangle_dict,
+                         {'x': 1, 'y': 9, 'id': 50, 'height': 2, 'width': 10})
         self.assertIsInstance(rectangle_dict, dict)
         self.assertFalse(rectangle == rectangle2)
+
+    def test_load_from_file_rectangle(self):
+        """ test the method load_from_file """
+
+        r1 = Rectangle(10, 7, 2, 8)
+        r2 = Rectangle(2, 4)
+        list_rectangles_input = [r1, r2]
+        Rectangle.save_to_file(list_rectangles_input)
+        list_rectangles_output = Rectangle.load_from_file()
+        self.assertIsInstance(list_rectangles_output, list)
+        self.assertEqual(str(list_rectangles_output[0]),
+                         "[Rectangle] (1) 2/8 - 10/7")
+        self.assertEqual(str(list_rectangles_output[1]),
+                         "[Rectangle] (2) 0/0 - 2/4")
+
+    def test_load_from_file_csv_rectangle(self):
+        """ test the method load_from_file """
+
+        r1 = Rectangle(10, 7, 2, 8)
+        r2 = Rectangle(2, 4)
+        list_rectangles_input = [r1, r2]
+        Rectangle.save_to_file_csv(list_rectangles_input)
+        list_rectangles_output = Rectangle.load_from_file_csv()
+        self.assertIsInstance(list_rectangles_output, list)
+        self.assertEqual(str(list_rectangles_output[0]),
+                         "[Rectangle] (1) 2/8 - 10/7")
+        self.assertEqual(str(list_rectangles_output[1]),
+                         "[Rectangle] (2) 0/0 - 2/4")
