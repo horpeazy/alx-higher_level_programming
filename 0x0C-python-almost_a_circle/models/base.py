@@ -4,6 +4,8 @@
 import json
 import csv
 
+from 0x0C-python-almost_a_circle.models.rectangle import Rectangle
+
 
 class Base:
     """ A base class """
@@ -50,10 +52,13 @@ class Base:
     @classmethod
     def create(cls, **dictionary):
         """ returns an instance with all attributes already set """
-        instance = cls(1, 1, id=10000)
-        instance.update(**dictionary)
+        if cls.__name__ == "Rectangle":
+            new = cls(10, 10)
+        else:
+            new = cls(10)
+        new.update(**dictionary)
 
-        return instance
+        return new
 
     @classmethod
     def load_from_file(cls):
