@@ -40,8 +40,9 @@ class Base:
         list_dict = []
         for obj in list_objs:
             list_dict.append(obj.to_dictionary())
+        lists = cls.to_json_string(list_dict)
         with open(filename, 'w') as f:
-                f.write(cls.to_json_string(list_dict))
+            f.write(lists)
 
     @classmethod
     def create(cls, **dictionary):
