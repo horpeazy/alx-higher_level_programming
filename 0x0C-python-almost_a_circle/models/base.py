@@ -4,8 +4,6 @@
 import json
 import csv
 
-from 0x0C-python-almost_a_circle.models.rectangle import Rectangle
-
 
 class Base:
     """ A base class """
