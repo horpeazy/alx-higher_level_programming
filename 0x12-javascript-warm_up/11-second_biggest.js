@@ -1,6 +1,6 @@
 #!/usr/bin/node
 
-const myArray = [];
+let myArray = [];
 
 if (process.argv.length < 4) {
   console.log(0);
