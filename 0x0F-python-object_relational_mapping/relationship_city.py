@@ -4,7 +4,7 @@ Connect to a database using SQLAlchemy
 """
 from sqlalchemy import Column, Integer, String, ForeignKey
 from sqlalchemy.orm import relationship
-from model_state import Base
+from relationship_state import Base
 
 
 class City(Base):
