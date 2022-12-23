@@ -17,6 +17,7 @@ if __name__ == "__main__":
     for i in range(len(cities)):
         if cities[i][1] == sys.argv[4]:
             if i == len(cities) - 1:
-                print(cities[i][0])
+                print(cities[i][0], end="")
             else:
                 print(cities[i][0], end=", ")
+    print()
