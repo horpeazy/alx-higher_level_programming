@@ -18,8 +18,7 @@ if __name__ == "__main__":
     # create a Session
     session = Session()
 
-    state = session.query(State).first()
-    if state:
-        print("1: {}".format(state.name))
-    else:
-        print()
+    states = session.query(State).filter(State.name.like("%a%")).all()
+    for state in states:
+        print("{}: {}".format(state.id, state.name))
+    session.close()
