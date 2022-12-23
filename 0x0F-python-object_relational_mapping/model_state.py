@@ -10,6 +10,7 @@ engine = create_engine('mysql://root:root@localhost:3306/hbtn_0e_6_usa')
 Base = declarative_base()
 
 class State(Base):
+    """ Class Model """
     __tablename__ = "states"
 
     id = Column(Integer, primary_key=True)
