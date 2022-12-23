@@ -4,8 +4,8 @@
 if __name__ == "__main__":
     from sqlalchemy import create_engine
     from sqlalchemy.orm import sessionmaker
-    from model_state import Base, State
-    from model_city import City
+    from relationship_state import Base, State
+    from relationship_city import City
     import sys
 
     # create an engine
